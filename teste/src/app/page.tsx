@@ -29,9 +29,15 @@ export default function Home() {
     <div>
       <Header />
       <h2>Olá mundo</h2>
-      <Botao/>
+      <Botao />
       <br />
       <Link href="/sobre" >Ir para a página sobre</Link>
+
+      <section className="bg-blue-500 text-white p-10 rounded-b-xl">
+        <h1 className="text-3xl font-bold">Bem vindo ao site</h1>
+        <p className="mt-2 text-lg">Next.js com Tailwind é top</p>
+      </section>
+
     </div>
 
   )
