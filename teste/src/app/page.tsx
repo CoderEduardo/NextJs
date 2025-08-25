@@ -2,6 +2,7 @@ import { Header } from "@/components/header"
 import { Metadata } from "next"
 import Botao from "@/components/botao/botao"
 import Link from "next/link"
+import Image from "next/image"
 
 export const metadata: Metadata = {
 
@@ -10,7 +11,17 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Testando NextJs",
     description: "Aprendendo NextJs e testando ao mesmo tempo",
-    images: ['']
+    url: 'https://meusite.com',
+    siteName: 'Receitas',
+    images: [
+      {
+        url: 'https://meusite.com/capa.png',
+        width: 800,
+        height: 600
+      }
+    ],
+    locale: 'pt-BR',
+    type: 'website'
   },
   robots: {
     index: true,
@@ -37,6 +48,13 @@ export default function Home() {
         <h1 className="text-3xl font-bold">Bem vindo ao site</h1>
         <p className="mt-2 text-lg">Next.js com Tailwind é top</p>
       </section>
+      {/*Imagens otimizadas*/}
+      <Image
+        src='/foto.png'
+        alt="foto otimizada"
+        width={500}
+        height={300}
+      />
 
 
     </div>
