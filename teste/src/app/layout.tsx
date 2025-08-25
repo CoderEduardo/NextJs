@@ -6,9 +6,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`antialiase`}>
-        {children}
+    <html lang="pt-BR">
+      <body>
+        <header>
+          <nav>
+            <a href="/">Início</a> | <a href="/sobre">Sobre</a>
+          </nav>
+        </header>
+        <main>{children}</main>
+        <footer>Feito com Next.js</footer>
       </body>
     </html>
   );

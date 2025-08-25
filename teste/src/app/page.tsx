@@ -1,5 +1,7 @@
 import { Header } from "@/components/header"
 import { Metadata } from "next"
+import Botao from "@/components/botao/botao"
+import Link from "next/link"
 
 export const metadata: Metadata = {
 
@@ -27,6 +29,9 @@ export default function Home() {
     <div>
       <Header />
       <h2>Olá mundo</h2>
+      <Botao/>
+      <br />
+      <Link href="/sobre" >Ir para a página sobre</Link>
     </div>
 
   )
