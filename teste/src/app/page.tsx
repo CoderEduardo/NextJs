@@ -38,6 +38,7 @@ export default function Home() {
         <p className="mt-2 text-lg">Next.js com Tailwind é top</p>
       </section>
 
+
     </div>
 
   )

@@ -2,7 +2,6 @@ export default function Login({ erroLogin = '' }) {
 
     return (
 
-
         <div className="h-screen flex justify-center items-center">
             {erroLogin && <p style={{ color: 'red' }}>{erroLogin}</p>} {/*Mensagem de erro*/}
             <main className="bg-black w-7xl h-160 text-white rounded-2xl">
@@ -18,7 +17,6 @@ export default function Login({ erroLogin = '' }) {
                 </form>
             </main>
         </div>
-
     )
 
 }
