@@ -6,7 +6,12 @@ import {prisma} from '../../../../lib/prisma'
 const user = await prisma.user.create({
     data:{
         name:"luis",
-        email:'luis@gmail.com'
+        email:'luis@gmail.com',
+        posts:{
+            create:[
+                {title:"Meu primeiro Post",content:"Olá mundo"}
+            ]
+        }
     }
 })
 
@@ -49,4 +54,19 @@ const page = await prisma.user.findMany({
     take:10
 })
 
+//criar post vinculado a um usuário já existente
+const post = await prisma.post.create({
+    data:{
+        title:"Salve fml",
+        content:"conteúdo aqui",
+        user:{
+            connect:{email:"luis@gmail.com"} //conecta pelo campo único
+        }
+    }
+})
+
+//buscar posts com dados do usuário
+const posts = await prisma.post.findMany({
+    include:{user:true}
+})
 

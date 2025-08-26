@@ -20,4 +20,22 @@ model Post{
     content String
     userId String @db.ObjectId 
     user User @relation(fields: [userId], references: [id])
+    postTags PostTag[]
+}
+
+model Tag{
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+    name String @unique
+    postTags PostTag[]
+}
+
+model PostTag {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  postId String @db.ObjectId
+  tagId  String @db.ObjectId
+
+  post Post @relation(fields: [postId], references: [id])
+  tag  Tag  @relation(fields: [tagId], references: [id])
+  
+  @@unique([postId, tagId])
 }
