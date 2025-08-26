@@ -3,6 +3,7 @@ import { Metadata } from "next"
 import Botao from "@/components/botao/botao"
 import Link from "next/link"
 import Image from "next/image"
+import LikeButton from "@/components/LikeButton/LikeButton"
 
 export const metadata: Metadata = {
 
@@ -35,7 +36,20 @@ export const metadata: Metadata = {
 
 }
 
-export default function Home() {
+async function getPosts(){
+//simulação de fetch no servidor
+return[
+  {id:1, title:"Aprendendo Next.js"},
+  {id:2, title:"React server components"}
+]
+
+
+}
+
+export default async function Home() {
+
+  const posts = await getPosts()
+
   return (
     <div>
       <Header />
@@ -55,6 +69,14 @@ export default function Home() {
         width={500}
         height={300}
       />
+
+      <ul>
+        {posts.map((p) => (
+          <li key={p.id}>{p.title} <LikeButton/></li>
+        ))}
+      </ul>
+
+
 
 
     </div>
